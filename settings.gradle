@@ -1,0 +1,2 @@
+rootProject.name = "watch_ui"
+include ':app'
