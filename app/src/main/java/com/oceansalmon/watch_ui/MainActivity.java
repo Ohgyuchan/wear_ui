@@ -13,21 +13,18 @@ public class MainActivity extends Activity {
 
     private TextView mTextView;
     private ActivityMainBinding binding;
+    private Button btn_next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        mTextView = binding.playRoutine;
-        Button imageButton = (Button) findViewById(R.id.btn_next);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-
+        btn_next = (Button) findViewById(R.id.btn_next);
+        btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Certificate.class);
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
             }
         });
